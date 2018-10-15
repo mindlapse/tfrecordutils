@@ -2,6 +2,12 @@
 
 Making life easier for working with TFRecord files and TensorFlow's data pipeline API.
 
+## Installation
+
+```
+pip install tfrecordutils
+```
+
 
 ### How to: Create a TFRecord file from a directory of images
 
