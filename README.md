@@ -9,7 +9,7 @@ pip install tfrecordutils
 ```
 
 
-#### How to: Create a TFRecord file from a directory of images
+### HOWTO: Create a TFRecord file from a directory of images
 
 * crops images by default to 500x500, but you can override this
 
@@ -22,7 +22,7 @@ TFRecordUtils.jpgToTFRecord(jpg_glob)
 
 
 
-#### How to: get an image batch iterator from a TFRecord file
+### HOWTO: get an image batch iterator from a TFRecord file
 
 ```
     tfrecord_file = 'images.tfrecords'
