@@ -3,7 +3,7 @@
 Making life easier for working with TFRecord files and TensorFlow's data pipeline API.
 
 
-# How to: Create a TFRecord file from a directory of images
+### How to: Create a TFRecord file from a directory of images
 
 * crops images by default to 500x500, but you can override this
 
@@ -16,7 +16,7 @@ TFRecordUtils.jpgToTFRecord(jpg_glob)
 
 
 
-# How to: get an image batch iterator from a TFRecord file
+### How to: get an image batch iterator from a TFRecord file
 
 ```
     tfrecord_file = 'images.tfrecords'
