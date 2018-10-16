@@ -61,7 +61,7 @@ class TFRecordUtils:
             example = tf.parse_single_example(tfrecord, features)
             image = tf.cast(example['image'], tf.float32) / 256.
             if resize != None:
-                image = tf.image.rеsize_images(image, resize)
+                image = tf.image.resize_images(image, resize)
             if flip_horiz:
                 image = tf.image.random_flip_left_right(image, seed=None)
             return mapping(image) if mapping is not None else image
@@ -69,7 +69,7 @@ class TFRecordUtils:
         dataset = dataset.map(to_numpy).repeat()
         
         if shuffle_buffer > 0:
-            dataset = dataset.shuffle(buffer=shuffle_buffer)
+            dataset = dataset.shuffle(buffer_size=shuffle_buffer)
         
         dataset = dataset.batch(batch_size)
         

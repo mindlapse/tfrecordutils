@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tfrecordutils",
-    version="0.1.3",
+    version="0.1.4",
     description="Utilities to simplify working with TFRecord files and TensorFlow's data pipeline API",
     long_description=long_description,
     author="Dave MacDonald",
