@@ -50,7 +50,7 @@ class TFRecordUtils:
         flip_horiz: Enable/disable random horizontal flips for the image
         batch_size: The number of items the iterator will return per iteration
         prefetch:   The number of elements to prefetch (or 0)
-        device:     The device to prefetch to
+        device:     The device to prefetch to.
         """
         
         fn_ph = tf.placeholder(tf.string, shape=[None])
@@ -60,8 +60,10 @@ class TFRecordUtils:
         def to_numpy(tfrecord):
             example = tf.parse_single_example(tfrecord, features)
             image = tf.cast(example['image'], tf.float32) / 256.
-            image = tf.r
-            image = tf.image.random_flip_left_right(image, seed=None)
+            if resize != None:
+                image = tf.image.rеsize_images(image, resize)
+            if flip_horiz:
+                image = tf.image.random_flip_left_right(image, seed=None)
             return mapping(image) if mapping is not None else image
         
         dataset = dataset.map(to_numpy).repeat()
