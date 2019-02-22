@@ -15,10 +15,12 @@ pip install tfrecordutils
 * crops images by default to 500x500, but you can override this
 
 ```
+from tfrecordutils import TFRecordUtils
+
 jpg_glob     = './jpg/*.jpg'
 tfrecord_file = 'images.tfrecords'
 
-TFRecordUtils.jpgToTFRecord(jpg_glob)
+TFRecordUtils.jpgToTFRecord(jpg_glob, tfrecord_file)
 ```
 
 
